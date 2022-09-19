@@ -99,6 +99,34 @@
     </div>
 
     <footer>
+
+      <div class="col-6 col-md">
+        <h5>By-me-a-coffe</h5>
+
+        <div id="paypal-button-container-P-4XV50617VS9007020MMUEX7Q"></div>
+        <script src="https://www.paypal.com/sdk/js?client-id=AZ4hNXex6VSRIcdNHn6Xr6O0W7qFsa3_TcS33i-qEgaUb_0TUNfWjSaNlxM4tPI50xs0VvC7iXfKE0Xf&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+        <script>
+          paypal.Buttons({
+              style: {
+                  shape: 'rect',
+                  color: 'gold',
+                  layout: 'vertical',
+                  label: 'subscribe'
+              },
+              createSubscription: function(data, actions) {
+                return actions.subscription.create({
+                  /* Creates the subscription */
+                  plan_id: 'P-4XV50617VS9007020MMUEX7Q'
+                });
+              },
+              onApprove: function(data, actions) {
+                alert(data.subscriptionID); // You can add optional success message for the subscriber here
+              }
+          }).render('#paypal-button-container-P-4XV50617VS9007020MMUEX7Q'); // Renders the PayPal button
+        </script>
+        
+      </div>
+
       <div id='footer-content'>
         <div><p>© 2021 by Govinda Systems</p></div>
         <div id='footer-center'>
