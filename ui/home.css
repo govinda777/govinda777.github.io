@@ -1,0 +1,30 @@
+#main-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+#code-container {
+  min-width: 56em;
+  width: 60%;
+  flex-grow: 1;
+}
+#code-container h3, #test-output h3 {
+  display: inline-block;
+  margin-right: 0.5em;
+}
+#test-output {
+  margin-left: 0.5em;
+  min-width: 28em;
+  width: 38%;
+  flex-grow: 1;
+  margin-left: 0.75em;
+}
+#employment-status {
+  padding: 0.1em 0.3em 0.1em 0.3em;
+  color: white;
+  background-color: #4EC9B0;
+  /*background-color: #B1364F;*/
+  border-radius: 0.3em;
+}
+pre {
+  font-size: 0.9em;
+}

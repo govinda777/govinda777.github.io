@@ -1,0 +1,18 @@
+#resume {
+  width: 60%;
+  max-width: 50em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  border: 1px solid lightgrey;
+}
+#resume img {
+  width: 100%;
+}
+#resume img:hover {
+  opacity: 0.55;
+}
+#download-links {
+  margin-top: 1em;
+  text-align: center;
+}

@@ -1,193 +1,199 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Govinda Souza</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="querySelector.css">
-    <link rel="shortcut icon" href="imagem/Looper BG.png" type="image/x-icon">
-   
-</head>
-<body>
-    <div class="containerMenu">
-        <div class="logo">
-            <header>
-                Portfólio      
-            </header>
-        </div>
-        
+<html>
+  <head>
+    <title>Public Stackhouse</title>
+    <link href="assets/public-stackhouse-favicon.png" type="image/png" rel="shortcut icon" />
+    <meta property="og:url" content="https://captainstack.github.io/public-stackhouse/">
+    <meta property="og:description" content="Andre Stackhouse. Seattle based full stack engineer. Let's talk code." />
+    <meta property="og:image" content="assets/public-stackhouse.png">
 
-        <div class="menu">
-           <nav class="menuNavBar">
-                <div class="menu-icon" onclick="abrirMenu()">
-                    <img src="imagem/menu.png" alt="menu">
-                </div>
+    <!-- Stylesheets -->
+    <link href="lib/prism/prism.css" rel="stylesheet" />
+    <link href="ui/main.css" rel="stylesheet" />
+    <link href="ui/header.css" rel="stylesheet" />
+    <link href="ui/home.css" rel="stylesheet" />
+    <link href="ui/footer.css" rel="stylesheet" />
+    <link href="lib/mocha/mocha.css" rel="stylesheet" />
+  </head>
+  
+  <body>
 
-                <ul class="navList">
-                    <li><a id="itensMenu" href="#home">Home</a></li>
-                    <li><a id="itensMenu" href="#sobre">Sobre</a></li>
-                    <li><a id="itensMenu"href="#habilidades">Habilidades</a></li>
-                    <li><a id="itensMenu" href="#projetos">Projetos</a></li>
-                </ul>
-            </nav>
-        </div>
+    <header>
+      <div id='header-content'>
+        <a id='home-link' href='.'>Public Stack&lt;<span class='accent'>House</span>&gt;</a>
+        <nav>
+          <ul>
+            [<li><a href='portfolio'>Portfolio</a></li>,
+            <li><a href='resume'>Resume</a></li>,
+            <!-- <li><a href='https://medium.com/@CaptainStack/latest' target='_blank'>Blog</a></li>, -->
+            <li><a href='about'>About</a></li>]
+          </ul>
+        </nav>
+      </div>
+      <hr>
+    </header>
+
+    <h2>Employment Status: <span id='employment-status'>Available</span></h2>
+    <p>JavaScript functions are loaded into this page and can be run from the browser console.</p>
+    <div id='main-content'>
+      <div id="code-container">
+        <h3>Whiteboard</h3>
+        <select>
+          <option disabled selected>Ask me a coding question</option>
+          <optgroup label='Arrays & Strings'>
+            <option>check_permutation</option>
+            <option>urlify</option>
+            <option>one_away</option>
+            <option>string_compression</option>
+            <option>rotate_matrix</option>
+            <option>zero_matrix</option>
+            <option>string_rotation</option>
+            <option>print_combinations</option>
+            <option>validate_brackets</option>
+            <option>corresponding_bracket_index</option>
+            <option>ransom_note</option>
+            <option>sum_pairs_to_target</option>
+            <option>is_saturated</option>
+            <option>pretty_print</option>
+          </optgroup>
+          <optgroup label='Linked Lists'>
+            <option>remove_dupes</option>
+            <option>return_kth_to_last</option>
+            <option>delete_middle_node</option>
+            <option>partition</option>
+            <option>sum_lists</option>
+            <option>palindrome</option>
+            <option>intersection</option>
+          </optgroup>
+          <optgroup label='Stacks & Queues'>
+            <option>sort_stack</option>
+          </optgroup>
+          <optgroup label='Trees & Graphs'>
+            <option>route_between_nodes</option>
+            <option>minimal_tree</option>
+            <option>list_of_depths</option>
+            <option>check_balanced</option>
+            <option>is_binary_search_tree</option>
+          </optgroup>
+          <optgroup label='Recursion & Dynamic Programming'>
+            <option>triple_step</option>
+            <option>magic_index</option>
+            <option>recursive_multiply</option>
+          </optgroup>
+          <optgroup label='Sorting & Searching'>
+            <option>sorted_merge</option>
+            <option>search_in_rotated_array</option>
+            <option>binary_search</option>
+          </optgroup>
+        </select>
+        <pre class="line-numbers"><code class="language-javascript">solutions_will_be_displayed_here(input) {
+  // Problems will be specified in comments.
+}</code></pre>
+      </div>
+      <div id="test-output">
+        <h3>Mocha Test Output</h3>
+        <button id='all-tests-button' title='Click to run all Mocha tests'>Run Tests &#9658;</button>
+        <div id="mocha"></div>
+      </div>
     </div>
 
-    <main>
-        <section id="home" class="containerHome">
-            <div class="texto">
-                <p>Olá, eu sou a</p>
-                <h1>Govinda Souza</h1>
-                <p>Desenvolvedora Front-end e Back-end</p>
+    <footer>
+      <div id='footer-content'>
+        <div><p>© 2021 by Andre Stackhouse</p></div>
+        <div id='footer-center'>
+          <a class='footer-links' href='https://www.linkedin.com/in/captainstack/' title='Find me on LinkedIn' target='_blank'>
+            <img src='./assets/linkedin-logo.svg' alt='LinkedIn Logo'>
+          </a>
+          <a class='footer-links' href='mailto:captainstack@gmail.com' title='Send me an email'>
+            <img src='./assets/email-logo.svg' alt='Email Logo'>
+          </a>
+          <a class='footer-links' href='http://stackoverflow.com/users/1542306/captain-stack' title='Find me on Stack Overflow' target='_blank'>
+            <img src='./assets/stack-overflow-logo.svg' alt='Stack Overflow Logo'>
+          </a>
+          <a class='footer-links' href='https://github.com/CaptainStack' title='Find me on GitHub' target='_blank'>
+            <img src='./assets/github-logo.svg' alt='GitHub Logo'>
+          </a>
+        </div>
+        <div><a href='https://github.com/CaptainStack/public-stackhouse' target='_blank'><p>View source on GitHub</p></a></div>
+      </div>
+    </footer>
 
-                <div class="redesSociais">
-                    <a class="linkedin" href="https://www.linkedin.com/in/govinda777/" target="blank">
-                        <img src="imagem/linkedin.png" alt="Linkedin">
-                        Linkedin 
-                    </a>
+    <!-- Libraries -->
+    <script src="lib/prism/prism.js"></script>
+    <script src="lib/chai/chai.js"></script>
+    <script src="lib/mocha/mocha.js"></script>
 
-                    <a class="github" href="https://github.com/govinda777" target="blank">
-                        <img src="imagem/github.png" alt="GitHub">
-                        GitHub
-                    </a>
-                </div>
-            </div>
+    <!-- Data Structures -->
+    <script src="data-structures/Array_Extensions.js"></script>
+    <script src="data-structures/Promise.js"></script>
+    <script src="data-structures/ListNode.js"></script>
+    <script src="data-structures/GraphNode.js"></script>
+    <script src="data-structures/Range.js"></script>
+    <script src="data-structures/TreeNode.js"></script>
 
-            <div class="image">
-                <img src="imagem/Looper BG.png" alt="">
-            </div>
-        </section>
+    <!-- Object Instances -->
+    <script src="object-instances/sample_arrays.js"></script>
+    <script src="object-instances/sample_graphs.js"></script>
+    <script src="object-instances/sample_linked_lists.js"></script>
+    <script src="object-instances/sample_strings.js"></script>
+    <script src="object-instances/sample_trees.js"></script>
 
-        <section id="sobre" class="containerSobreMim">
-            <div class="fotoJosiane">
-                <img src="imagem/govinda777.jpeg" alt="Foto de Perfil">        
-            </div>
+    <!-- Arrays and Strings -->
+    <script src="solutions/01-arrays-and-strings/01-02-check_permutation.js"></script>
+    <script src="solutions/01-arrays-and-strings/01-03-urlify.js"></script>
+    <script src="solutions/01-arrays-and-strings/01-05-one_away.js"></script>
+    <script src="solutions/01-arrays-and-strings/01-06-string_compression.js"></script>
+    <script src="solutions/01-arrays-and-strings/01-07-rotate_matrix.js"></script>
+    <script src="solutions/01-arrays-and-strings/01-08-zero_matrix.js"></script>
+    <script src="solutions/01-arrays-and-strings/01-09-string_rotation.js"></script>
+    <script src="solutions/01-arrays-and-strings/corresponding_bracket_index.js"></script>
+    <script src="solutions/01-arrays-and-strings/validate_brackets.js"></script>
+    <script src="solutions/01-arrays-and-strings/print_combinations.js"></script>
+    <script src="solutions/01-arrays-and-strings/ransom_note.js"></script>
+    <script src="solutions/01-arrays-and-strings/sum_pairs_to_target.js"></script>
+    <script src="solutions/01-arrays-and-strings/is_saturated.js"></script>
+    <script src="solutions/01-arrays-and-strings/pretty_print.js"></script>
 
-            <div class="sobre">
-                <h1>SOBRE</h1>
-                <h3>Sorocaba-SP, Brasil</h3>
-                <p>Estou cursando Análise e Desenvolvimento de Sistemas na Faculdade de Tecnologia de Sorocaba, atualmente trabalho como estagiária em dev, com foco em front-end e em SEO técnico, tenho experiência como analista de SEO, possuo conhecimentos básicos em JavaScript, C#, HTML5 e CSS, tive experiência com Google Analytics, e estou em busca de aprimorar meus conhecimentos em desenvolvimento front-end e back-end.</p>
+    <!-- Linked Lists -->
+    <script src="solutions/02-linked-lists/02-01-remove_dupes.js"></script>
+    <script src="solutions/02-linked-lists/02-02-return_kth_to_last.js"></script>
+    <script src="solutions/02-linked-lists/02-03-delete_middle_node.js"></script>
+    <script src="solutions/02-linked-lists/02-04-partition.js"></script>
+    <script src="solutions/02-linked-lists/02-05-sum_lists.js"></script>
+    <script src="solutions/02-linked-lists/02-06-palindrome.js"></script>
+    <script src="solutions/02-linked-lists/02-07-intersection.js"></script>
 
-                <div class="redesSociais2">
-                <a class="whatsapp" href="https://api.whatsapp.com/send?phone=5511936183997&text=Oi%2C%20tudo%20bem%3F%20Meu%20nome%20%C3%A9%20Josiane%2C%20vou%20fazer%20contato%20contigo." target="blank">
-                    <img src="imagem/whatsapp.png" alt="whatsapp">
-                    Whatsapp
-                </a>
+    <!-- Stacks & Queues -->
+    <script src="solutions/03-stacks-and-queues/03-05-sort_stack.js"></script>
 
-                </div>
+    <!-- Trees and Graphs -->
+    <script src="solutions/04-trees-and-graphs/04-01-route_between_nodes.js"></script>
+    <script src="solutions/04-trees-and-graphs/04-02-minimal_tree.js"></script>
+    <script src="solutions/04-trees-and-graphs/04-03-list_of_depths.js"></script>
+    <script src="solutions/04-trees-and-graphs/04-04-check_balanced.js"></script>
+    <script src="solutions/04-trees-and-graphs/04-08-first_common_ancestor.js"></script>
+    <script src="solutions/04-trees-and-graphs/is_binary_search_tree.js"></script>
 
-            </div>
+    <!-- Recursion and Dynamic Programming -->
+    <script src="solutions/08-recursion-and-dynamic-programming/08-01-triple_step.js"></script>
+    <script src="solutions/08-recursion-and-dynamic-programming/08-03-magic_index.js"></script>
+    <script src="solutions/08-recursion-and-dynamic-programming/08-04-power_set.js"></script>
+    <script src="solutions/08-recursion-and-dynamic-programming/08-05-recursive_multiply.js"></script>
+    <script src="solutions/08-recursion-and-dynamic-programming/max_nonadjacent_subset.js"></script>
 
-        </section>
+    <!-- Sorting and Searching -->
+    <script src="solutions/10-sorting-and-searching/10-01-sorted_merge.js"></script>
+    <script src="solutions/10-sorting-and-searching/10-03-search_in_rotated_array.js"></script>
+    <script src="solutions/10-sorting-and-searching/binary_search.js"></script>
 
-        <section id="habilidades" class="containerHabilidades">
-            <h1>Habilidades</h1>
+    <!-- Test Scripts -->
+    <script src="test/check_permutation_test.js"></script>
+    <script src="test/one_away_test.js"></script>
+    <script src="test/string_compression_test.js"></script>
+    <script src="test/corresponding_bracket_index_test.js"></script>
+    <script src="test/sort_stack_test.js"></script>
 
-            <div class="containerMaster">
-                <div class="habilidades">
-                    <img class="images" src="imagem/html.png" alt="html5">
-                    <h1>HTML5</h1>
-                    <p>Conhecimentos em formulários, botões, imagens, vídeos, entres outros. HTML semântico.</p>
-                </div>
-
-                <div class="habilidades">
-                    <img class="images" src="imagem/CSS.png" alt="CSS3">
-                    <h1>CSS3</h1>
-                    <p> Conhecimentos em design responsivo, flexbox, grid, seletores, classes, ids, position, estilização em geral, entre outros.</p>
-                </div>
-
-                <div class="habilidades">
-                    <img class="images" src="imagem/javascript.png" alt="JavaScript">
-                    <h1>JavaScript</h1>
-                    <p>Conhecimentos em funções, variáveis, operadores, entre outros.</p>
-                </div>
-
-                <div class="habilidades">
-                    <img id="iconBootstrap" class="images" src="imagem/bootstrap-5.png" alt="Bootstrap5">
-                    <h1>BootStrap</h1>
-                    <p>Conhecimentos em criação de layouts, utilização de ícones do bootstrap, elementos de conteúdo, formulários, entre outros.</p>
-                </div>
-
-                <div class="habilidades">
-                    <img class="images" src="imagem/githubLogo.png" alt="GitHubLogo">
-                    <h1>GitHub</h1>
-                    <p>Conhecimentos em criação e configuração de repositórios, GithubPages, clonar repositórios, entre outros.</p>
-                </div>
-
-                <div class="habilidades">
-                    <img class="images" src="imagem/git.png" alt="git">
-                    <h1>Git</h1>
-                    <p>Conhecimentos em versionamento, utilização do Git Bash, prática de criar e clonar repositórios, uso de comandos como git add, commir, push e pull.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="projetos" class="containerProjetos">
-            <h1>Projetos</h1>
-
-            <div class="projetos">                      
-
-                <div class="areaProjetos">
-                                            
-                    <h1 id="emBreve">EM BREVE</h1>
-                        
-                    <div class="textoProjetos">
-                        <h2></h2>
-                        <p></p>
-                        <a href="" target="blank"></a>
-                    </div>
-                </div>  
-
-                <div class="areaProjetos">
-                                            
-                    <h1 id="emBreve">EM BREVE</h1>
-                        
-                    <div class="textoProjetos">
-                        <h2></h2>
-                        <p></p>
-                        <a href="" target="blank"></a>
-                    </div>
-                </div>  
-
-                <div class="areaProjetos">
-                                            
-                    <h1 id="emBreve">EM BREVE</h1>
-                        
-                    <div class="textoProjetos">
-                        <h2></h2>
-                        <p></p>
-                        <a href="" target="blank"></a>
-                    </div>
-                </div>  
-
-                <div class="areaProjetos">
-                                            
-                    <h1 id="emBreve">EM BREVE</h1>
-                        
-                    <div class="textoProjetos">
-                        <h2></h2>
-                        <p></p>
-                        <a href="" target="blank"></a>
-                    </div>
-                </div>                          
-
-            </div>
-
-        </section>
-
-    </main>
-
-    <footer class="rodape">
-
-        <h4>Desenvolvido por Govinda Souza</h4>
-
-        <h5>2022</h5>
-
-    </footer> 
-
-    <script src="script"></script>
-    
-</body>
+    <!-- UI Scripts -->
+    <script src="ui/ui.js"></script>
+  </body>
 </html>

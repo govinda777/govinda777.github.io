@@ -1,0 +1,23 @@
+#bio {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+}
+#left-column {
+  width: 30em;
+  margin-right: 3em;
+}
+#right-column img {
+  width: 30em;
+}
+a p {
+  margin: 0;
+  display: inline;
+}
+ul {
+  margin: 0;
+  padding-left: 1em;
+}
+h1 {
+  text-align: center;
+}

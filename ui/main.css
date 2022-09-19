@@ -1,0 +1,29 @@
+body {
+  padding: 0 2em 0 2em;
+  overflow-y: scroll;
+  max-width: 120em;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+}
+p, h1, h2, h3 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.accent {
+  color: #4EC9B0;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: #4EC9B0;
+}
+/* These styles are duplicated here from Prism.css so the formatting loads more quickly. */
+pre {
+  background-color: #272822;
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
