@@ -1,201 +1,140 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <title>Public Stackhouse</title>
-    <link href="assets/public-stackhouse-favicon.png" type="image/png" rel="shortcut icon" />
-    <meta property="og:url" content="https://captainstack.github.io/public-stackhouse/">
-    <meta property="og:description" content="Andre Stackhouse. Seattle based full stack engineer. Let's talk code." />
-    <meta property="og:image" content="assets/public-stackhouse.png">
+    <title>Portfolio | Public Stackhouse</title>
+    <link href="../assets/public-stackhouse-favicon.png" type="image/png" rel="shortcut icon" />
 
     <!-- Stylesheets -->
-    <link href="lib/prism/prism.css" rel="stylesheet" />
-    <link href="ui/main.css" rel="stylesheet" />
-    <link href="ui/header.css" rel="stylesheet" />
-    <link href="ui/home.css" rel="stylesheet" />
-    <link href="ui/footer.css" rel="stylesheet" />
-    <link href="lib/mocha/mocha.css" rel="stylesheet" />
+    <link href="../ui/main.css" rel="stylesheet" />
+    <link href="../ui/header.css" rel="stylesheet" />
+    <link href="../ui/footer.css" rel="stylesheet" />
+    <link href="../ui/portfolio.css" rel="stylesheet" />
   </head>
-  
+
   <body>
 
     <header>
       <div id='header-content'>
-        <a id='home-link' href='.'>Public Stack&lt;<span class='accent'>House</span>&gt;</a>
+        <a id='home-link' href='../'>Public Stack&lt;<span>House</span>&gt;</a>
         <nav>
           <ul>
-            [<li><a href='portfolio'>Portfolio</a></li>,
-            <li><a href='resume'>Resume</a></li>,
-            <!-- <li><a href='https://medium.com/@CaptainStack/latest' target='_blank'>Blog</a></li>, -->
-            <li><a href='about'>About</a></li>,
-            <li><a href='pricing'>Pricing</a></li>]
+            [<li><a href='.'><span class='accent'>Portfolio</span></a></li>,
+            <li><a href='../resume'>Resume</a></li>,
+            <li><a href='https://github.com/govinda777/blog'>Blog</a></li>,
+            <li><a href='../about'>About</a></li>]
           </ul>
         </nav>
       </div>
       <hr>
     </header>
 
-    <h2>Employment Status: <span id='employment-status'>Available</span></h2>
-    <p>JavaScript functions are loaded into this page and can be run from the browser console.</p>
-    <div id='main-content'>
-      <div id="code-container">
-        <h3>Whiteboard</h3>
-        <select>
-          <option disabled selected>Ask me a coding question</option>
-          <optgroup label='Arrays & Strings'>
-            <option>check_permutation</option>
-            <option>urlify</option>
-            <option>one_away</option>
-            <option>string_compression</option>
-            <option>rotate_matrix</option>
-            <option>zero_matrix</option>
-            <option>string_rotation</option>
-            <option>print_combinations</option>
-            <option>validate_brackets</option>
-            <option>corresponding_bracket_index</option>
-            <option>ransom_note</option>
-            <option>sum_pairs_to_target</option>
-            <option>is_saturated</option>
-            <option>pretty_print</option>
-          </optgroup>
-          <optgroup label='Linked Lists'>
-            <option>remove_dupes</option>
-            <option>return_kth_to_last</option>
-            <option>delete_middle_node</option>
-            <option>partition</option>
-            <option>sum_lists</option>
-            <option>palindrome</option>
-            <option>intersection</option>
-          </optgroup>
-          <optgroup label='Stacks & Queues'>
-            <option>sort_stack</option>
-          </optgroup>
-          <optgroup label='Trees & Graphs'>
-            <option>route_between_nodes</option>
-            <option>minimal_tree</option>
-            <option>list_of_depths</option>
-            <option>check_balanced</option>
-            <option>is_binary_search_tree</option>
-          </optgroup>
-          <optgroup label='Recursion & Dynamic Programming'>
-            <option>triple_step</option>
-            <option>magic_index</option>
-            <option>recursive_multiply</option>
-          </optgroup>
-          <optgroup label='Sorting & Searching'>
-            <option>sorted_merge</option>
-            <option>search_in_rotated_array</option>
-            <option>binary_search</option>
-          </optgroup>
-        </select>
-        <pre class="line-numbers"><code class="language-javascript">solutions_will_be_displayed_here(input) {
-  // Problems will be specified in comments.
-}</code></pre>
+    <div id='portfolio'>
+      <div class='portfolio-item'>
+        <a href='https://environmentalenforcementwatch.org' target='_blank'>
+          <h3>Environmental Enforcement Watch</h3>
+          <img src='../assets/environmental-enforcement-watch.png'/>
+          <p>A citizen science data project from EDGI</p>
+          <p><strong>Built with:</strong> Gatsby, React</p>
+          <p><strong>Built for:</strong> Environmental Data Governance Initiative (EDGI).</p>
+        </a>
+        <hr>
+        <a href='https://github.com/govinda777' target='_blank'><p>View code on GitHub</p></a>
       </div>
-      <div id="test-output">
-        <h3>Mocha Test Output</h3>
-        <button id='all-tests-button' title='Click to run all Mocha tests'>Run Tests &#9658;</button>
-        <div id="mocha"></div>
+      <div class='portfolio-item'>
+        <a href='https://github.com/govinda777/boulder-sorocaba' target='_blank'>
+          <h3>DApp Comunidade Boulder Sorocaba</h3>
+          <img src='../assets/chromattis.png'/>
+          <p>A simple, fun, and challenging 2D puzzle game.</p>
+          <p><strong>Built with:</strong> React, Redux, CSS Grid</p>
+          <p><strong>Built for:</strong> Fans of puzzles like 2048 and the Rubicks cube.</p>
+        </a>
+        <hr>
+        <a href='https://github.com/CaptainStack/chromattis' target='_blank'><p>View code on GitHub</p></a>
       </div>
+
+      <div class='portfolio-item'>
+        <a href='https://captainstack.github.io/overcomp/' target='_blank'>
+          <h3>Overcomp</h3>
+          <img src='../assets/overcomp.png'/>
+          <p>A tool for optimizing team composition for the video game Overwatch.</p>
+          <p><strong>Built with:</strong> React, Redux, Flexbox</p>
+          <p><strong>Built for:</strong> A fun tool for the Overwatch community</p>
+        </a>
+        <hr>
+        <a href='https://github.com/CaptainStack/overcomp' target='_blank'><p>View code on GitHub</p></a>
+      </div>
+
+      <div class='portfolio-item'>
+        <a href='https://code.org/promote' target='_blank'>
+          <h3>Code.org/promote</h3>
+          <img src='../assets/code-org-promote.png'/>
+          <p>An interactive infographic to help spread awareness of computer science jobs, legislation, and education.</p>
+          <p><strong>Built with:</strong> Sinatra, jQuery, Raphael</p>
+          <p><strong>Built for:</strong> Code.org's outreach team</p>
+        </a>
+        <hr>
+        <a href='https://github.com/code-dot-org/code-dot-org/tree/staging/pegasus/sites.v3/code.org/public/promote' target='_blank'><p>View code on GitHub</p></a>
+      </div>
+
+      <div class='portfolio-item'>
+        <a href='http://captainstack.github.io/ChessScouter/' target='_blank'>
+          <h3>Chess Scouter</h3>
+          <img src='../assets/chess-scouter.png'/>
+          <p>A chess training tool that helps players learn chess tactics through active visualization overlayed on a chess board.</p>
+          <p><strong>Built with:</strong> JavaScript, jQuery, CSS</p>
+          <p><strong>Built for:</strong> Informatics senior capstone</p>
+        </a>
+        <hr>
+        <a href='https://github.com/CaptainStack/ChessScouter' target='_blank'><p>View code on GitHub</p></a>
+      </div>
+
+      <div class='portfolio-item'>
+        <a href='https://captainstack.github.io/public-stackhouse/' target='_blank'>
+          <h3>Public Stackhouse</h3>
+          <img src='../assets/public-stackhouse.png'/>
+          <p>A public portfolio site that displays interview solutions coded in JavaScript and unit tests written with Mocha.</p>
+          <p><strong>Built with:</strong> JavaScript, Mocha, Flexbox</p>
+          <p><strong>Built for:</strong> Personal promotion & practice</p>
+        </a>
+        <hr>
+        <a href='https://github.com/CaptainStack/public-stackhouse' target='_blank'><p>View code on GitHub</p></a>
+      </div>
+
+      <div class='portfolio-item'>
+        <a href='https://captainstack.github.io/ma-y-yo-kart/' target='_blank'>
+          <h3>Ma Y Yo Kart</h3>
+          <img src='../assets/ma-y-yo-kart.png'/>
+          <p>A 2D shooter-platformer with an emphasis on resource management.</p>
+          <p><strong>Built with:</strong> Flash, FlashPunk</p>
+          <p><strong>Built for:</strong> The What Would Molydeux 48-hour game jam</p>
+        </a>
+        <hr>
+        <a href='https://github.com/CaptainStack/ma-y-yo-kart' target='_blank'><p>View code on GitHub</p></a>
+      </div>
+
     </div>
 
     <footer>
-
       <div id='footer-content'>
-        <div><p>© 2021 by Govinda Systems</p></div>
+        <div><p>© 2021 by Andre Stackhouse</p></div>
         <div id='footer-center'>
-          <a class='footer-links' href='https://www.linkedin.com/in/govinda777/' title='Find me on LinkedIn' target='_blank'>
-            <img src='./assets/linkedin-logo.svg' alt='LinkedIn Logo'>
+          <a class='footer-links' href='https://www.linkedin.com/in/captainstack/' title='Find me on LinkedIn' target='_blank'>
+            <img src='../assets/linkedin-logo.svg' alt='LinkedIn Logo'>
           </a>
-          <a class='footer-links' href='mailto:govinda777@gmail.com' title='Send me an email'>
-            <img src='./assets/email-logo.svg' alt='Email Logo'>
+          <a class='footer-links' href='mailto:captainstack@gmail.com' title='Send me an email'>
+            <img src='../assets/email-logo.svg' alt='Email Logo'>
           </a>
-          <a class='footer-links' href='https://stackoverflow.com/users/5000842/govinda-mendes-souza' title='Find me on Stack Overflow' target='_blank'>
-            <img src='./assets/stack-overflow-logo.svg' alt='Stack Overflow Logo'>
+          <a class='footer-links' href='http://stackoverflow.com/users/1542306/captain-stack' title='Find me on Stack Overflow' target='_blank'>
+            <img src='../assets/stack-overflow-logo.svg' alt='Stack Overflow Logo'>
           </a>
-          <a class='footer-links' href='https://github.com/govinda777' title='Find me on GitHub' target='_blank'>
-            <img src='./assets/github-logo.svg' alt='GitHub Logo'>
+          <a class='footer-links' href='https://github.com/CaptainStack' title='Find me on GitHub' target='_blank'>
+            <img src='../assets/github-logo.svg' alt='GitHub Logo'>
           </a>
         </div>
-        <div><a href='https://github.com/govinda777/govinda777.github.io' target='_blank'><p>View source on GitHub</p></a></div>
+        <div><a href='https://github.com/CaptainStack/public-stackhouse' target='_blank'><p>View source on GitHub</p></a></div>
       </div>
     </footer>
 
-    <!-- Libraries -->
-    <script src="lib/prism/prism.js"></script>
-    <script src="lib/chai/chai.js"></script>
-    <script src="lib/mocha/mocha.js"></script>
-
-    <!-- Data Structures -->
-    <script src="data-structures/Array_Extensions.js"></script>
-    <script src="data-structures/Promise.js"></script>
-    <script src="data-structures/ListNode.js"></script>
-    <script src="data-structures/GraphNode.js"></script>
-    <script src="data-structures/Range.js"></script>
-    <script src="data-structures/TreeNode.js"></script>
-
-    <!-- Object Instances -->
-    <script src="object-instances/sample_arrays.js"></script>
-    <script src="object-instances/sample_graphs.js"></script>
-    <script src="object-instances/sample_linked_lists.js"></script>
-    <script src="object-instances/sample_strings.js"></script>
-    <script src="object-instances/sample_trees.js"></script>
-
-    <!-- Arrays and Strings -->
-    <script src="solutions/01-arrays-and-strings/01-02-check_permutation.js"></script>
-    <script src="solutions/01-arrays-and-strings/01-03-urlify.js"></script>
-    <script src="solutions/01-arrays-and-strings/01-05-one_away.js"></script>
-    <script src="solutions/01-arrays-and-strings/01-06-string_compression.js"></script>
-    <script src="solutions/01-arrays-and-strings/01-07-rotate_matrix.js"></script>
-    <script src="solutions/01-arrays-and-strings/01-08-zero_matrix.js"></script>
-    <script src="solutions/01-arrays-and-strings/01-09-string_rotation.js"></script>
-    <script src="solutions/01-arrays-and-strings/corresponding_bracket_index.js"></script>
-    <script src="solutions/01-arrays-and-strings/validate_brackets.js"></script>
-    <script src="solutions/01-arrays-and-strings/print_combinations.js"></script>
-    <script src="solutions/01-arrays-and-strings/ransom_note.js"></script>
-    <script src="solutions/01-arrays-and-strings/sum_pairs_to_target.js"></script>
-    <script src="solutions/01-arrays-and-strings/is_saturated.js"></script>
-    <script src="solutions/01-arrays-and-strings/pretty_print.js"></script>
-
-    <!-- Linked Lists -->
-    <script src="solutions/02-linked-lists/02-01-remove_dupes.js"></script>
-    <script src="solutions/02-linked-lists/02-02-return_kth_to_last.js"></script>
-    <script src="solutions/02-linked-lists/02-03-delete_middle_node.js"></script>
-    <script src="solutions/02-linked-lists/02-04-partition.js"></script>
-    <script src="solutions/02-linked-lists/02-05-sum_lists.js"></script>
-    <script src="solutions/02-linked-lists/02-06-palindrome.js"></script>
-    <script src="solutions/02-linked-lists/02-07-intersection.js"></script>
-
-    <!-- Stacks & Queues -->
-    <script src="solutions/03-stacks-and-queues/03-05-sort_stack.js"></script>
-
-    <!-- Trees and Graphs -->
-    <script src="solutions/04-trees-and-graphs/04-01-route_between_nodes.js"></script>
-    <script src="solutions/04-trees-and-graphs/04-02-minimal_tree.js"></script>
-    <script src="solutions/04-trees-and-graphs/04-03-list_of_depths.js"></script>
-    <script src="solutions/04-trees-and-graphs/04-04-check_balanced.js"></script>
-    <script src="solutions/04-trees-and-graphs/04-08-first_common_ancestor.js"></script>
-    <script src="solutions/04-trees-and-graphs/is_binary_search_tree.js"></script>
-
-    <!-- Recursion and Dynamic Programming -->
-    <script src="solutions/08-recursion-and-dynamic-programming/08-01-triple_step.js"></script>
-    <script src="solutions/08-recursion-and-dynamic-programming/08-03-magic_index.js"></script>
-    <script src="solutions/08-recursion-and-dynamic-programming/08-04-power_set.js"></script>
-    <script src="solutions/08-recursion-and-dynamic-programming/08-05-recursive_multiply.js"></script>
-    <script src="solutions/08-recursion-and-dynamic-programming/max_nonadjacent_subset.js"></script>
-
-    <!-- Sorting and Searching -->
-    <script src="solutions/10-sorting-and-searching/10-01-sorted_merge.js"></script>
-    <script src="solutions/10-sorting-and-searching/10-03-search_in_rotated_array.js"></script>
-    <script src="solutions/10-sorting-and-searching/binary_search.js"></script>
-
-    <!-- Test Scripts -->
-    <script src="test/check_permutation_test.js"></script>
-    <script src="test/one_away_test.js"></script>
-    <script src="test/string_compression_test.js"></script>
-    <script src="test/corresponding_bracket_index_test.js"></script>
-    <script src="test/sort_stack_test.js"></script>
-
-    <!-- UI Scripts -->
-    <script src="ui/ui.js"></script>
   </body>
 </html>
