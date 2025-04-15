@@ -1,0 +1,104 @@
+<!-- Repositories Section -->
+<section id="repositories" class="py-16 min-h-screen bg-dark-navy relative" x-data="repositories">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-8 text-center">
+      <span class="font-mono text-turquoise">04.</span> Meus Repositórios
+    </h2>
+    
+    <div class="max-w-6xl mx-auto">
+      <div class="text-light-gray text-center mb-8">
+        Aqui estão meus repositórios mais recentemente atualizados no GitHub.
+      </div>
+      
+      <!-- Loading state -->
+      <div x-show="loading" class="flex justify-center py-12">
+        <div class="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-turquoise"></div>
+      </div>
+      
+      <!-- Error state -->
+      <div x-show="error" class="text-red-500 text-center py-8">
+        <div class="text-lg mb-3">Oops! Não foi possível carregar os repositórios.</div>
+        <p x-text="errorMessage"></p>
+        <button @click="fetchRepositories" class="mt-3 px-4 py-1 bg-turquoise text-dark-navy rounded hover:bg-opacity-80 transition-colors">
+          Tentar novamente
+        </button>
+      </div>
+      
+      <!-- Repository Grid -->
+      <div x-show="!loading && !error" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+        <template x-for="repo in repositories" :key="repo.id">
+          <div class="bg-light-navy rounded-lg shadow-lg overflow-hidden hover:translate-y-[-3px] transition-all duration-300 border border-opacity-10 border-turquoise flex flex-col text-sm">
+            <!-- Repo Header with Image -->
+            <div class="h-28 bg-gradient-to-br from-dark-navy to-navy relative overflow-hidden">
+              <!-- Repository Icon/Image -->
+              <div class="absolute inset-0 flex items-center justify-center opacity-20">
+                <i class="fas fa-code-branch text-7xl text-white"></i>
+              </div>
+              <!-- Repository Initial Letter -->
+              <div class="absolute inset-0 flex items-center justify-center">
+                <span class="text-6xl font-bold text-white opacity-30" x-text="repo.name.charAt(0).toUpperCase()"></span>
+              </div>
+              <!-- Repository Language Icon (if available) -->
+              <div class="absolute bottom-2 right-2 bg-dark-navy p-2 rounded-full" x-show="repo.language">
+                <i class="fas" :class="getLanguageIcon(repo.language)"></i>
+              </div>
+              <!-- Repository Name Overlay -->
+              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-light-navy to-transparent p-3">
+                <h3 class="text-base font-bold text-white truncate">
+                  <a :href="repo.html_url" target="_blank" class="hover:text-turquoise transition-colors" x-text="repo.name"></a>
+                </h3>
+              </div>
+            </div>
+            
+            <!-- Content -->
+            <div class="p-3 flex-grow flex flex-col">
+              <!-- Description -->
+              <p class="text-light-gray mb-2 flex-grow text-xs line-clamp-2" x-text="repo.description || 'Sem descrição disponível'"></p>
+              
+              <!-- Topics -->
+              <div class="flex flex-wrap gap-1 mb-2">
+                <template x-for="topic in repo.topics.slice(0, 3)" :key="topic">
+                  <span class="px-1.5 py-0.5 text-xs bg-dark-navy text-turquoise rounded-full" x-text="topic"></span>
+                </template>
+              </div>
+              
+              <!-- Stats -->
+              <div class="flex justify-between items-center text-xs text-slate-400 pt-2 border-t border-dark-navy">
+                <!-- Last Update -->
+                <div class="flex items-center">
+                  <i class="far fa-calendar-alt mr-1"></i>
+                  <span x-text="formatDate(repo.updated_at)"></span>
+                </div>
+                
+                <!-- Stars & Forks -->
+                <div class="flex space-x-3">
+                  <span class="flex items-center">
+                    <i class="far fa-star mr-1"></i>
+                    <span x-text="repo.stargazers_count"></span>
+                  </span>
+                  <span class="flex items-center">
+                    <i class="fas fa-code-branch mr-1"></i>
+                    <span x-text="repo.forks_count"></span>
+                  </span>
+                </div>
+              </div>
+              
+              <!-- Link button -->
+              <a :href="repo.html_url" target="_blank" class="mt-2 py-1 px-2 rounded border border-turquoise text-turquoise flex items-center justify-center text-xs hover:bg-turquoise hover:bg-opacity-10 transition-colors">
+                <span>Ver Repositório</span>
+                <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+              </a>
+            </div>
+          </div>
+        </template>
+      </div>
+      
+      <div class="text-center mt-8">
+        <a href="https://github.com/govinda777" target="_blank" 
+           class="inline-block px-4 py-2 border border-turquoise text-turquoise rounded-md hover:bg-turquoise hover:bg-opacity-10 transition-colors text-sm">
+          Ver todos os repositórios <i class="fas fa-arrow-right ml-1"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section> 

@@ -23,6 +23,73 @@ document.addEventListener('alpine:init', () => {
     observer.observe(el);
     cleanup(() => observer.disconnect());
   });
+  
+  // Repositories component
+  Alpine.data('repositories', () => ({
+    repositories: [],
+    loading: true,
+    error: false,
+    errorMessage: '',
+    
+    init() {
+      this.fetchRepositories();
+    },
+    
+    fetchRepositories() {
+      this.loading = true;
+      this.error = false;
+      
+      fetch('https://api.github.com/users/govinda777/repos?sort=updated&per_page=5')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`GitHub API error: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(data => {
+          this.repositories = data;
+          this.loading = false;
+        })
+        .catch(error => {
+          console.error('Error fetching repositories:', error);
+          this.error = true;
+          this.errorMessage = error.message;
+          this.loading = false;
+        });
+    },
+    
+    // Formatar data legível em português
+    formatDate(dateString) {
+      const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+      return new Date(dateString).toLocaleDateString('pt-BR', options);
+    },
+    
+    // Obter ícone baseado na linguagem de programação
+    getLanguageIcon(language) {
+      if (!language) return 'fa-code';
+      
+      const languageIcons = {
+        'JavaScript': 'fa-js',
+        'TypeScript': 'fa-js',
+        'HTML': 'fa-html5',
+        'CSS': 'fa-css3-alt',
+        'Python': 'fa-python',
+        'Java': 'fa-java',
+        'C#': 'fa-microsoft',
+        'PHP': 'fa-php',
+        'Ruby': 'fa-gem',
+        'Go': 'fa-golang',
+        'Swift': 'fa-swift',
+        'Kotlin': 'fa-android',
+        'R': 'fa-r-project',
+        'Shell': 'fa-terminal',
+        'Dart': 'fa-dart',
+        'Rust': 'fa-rust'
+      };
+      
+      return languageIcons[language] || 'fa-code';
+    }
+  }));
 });
 
 // Music Control Functions

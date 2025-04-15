@@ -19,6 +19,7 @@
             'white': '#E6F1FF',
             'navy': '#112240',
             'dark-navy': '#112240',
+            'light-navy': '#1E3A5F',
           },
           fontFamily: {
             'sans': ['Inter', 'sans-serif'],
@@ -76,13 +77,13 @@
   {% include footer.html %}
   
   <!-- Custom JavaScript -->
-  <script src="{{ "/js/main.js" | relative_url }}"></script>
-  <script src="{{ "/js/three-animation.js" | relative_url }}"></script>
+  <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
+  <script src="{{ "/assets/js/three-animation.js" | relative_url }}"></script>
   
   <!-- Adicione aqui os scripts específicos do site -->
   {% if page.custom_js %}
     {% for js_file in page.custom_js %}
-      <script src="{{ site.baseurl }}/js/{{ js_file }}.js"></script>
+      <script src="{{ site.baseurl }}/assets/js/{{ js_file }}.js"></script>
     {% endfor %}
   {% endif %}
 </body>
