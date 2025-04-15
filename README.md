@@ -29,9 +29,11 @@
   
   <!-- Tech Stack -->
   <div>
-    <img src="https://skillicons.dev/icons?i=html,css,js,bootstrap,github" alt="Tech Stack" />
+    <img src="https://skillicons.dev/icons?i=html,css,js,tailwind,alpinejs" alt="Tech Stack" />
+    <img src="https://www.svgrepo.com/show/373842/animejs.svg" alt="Anime.js" height="48" width="48" style="margin: 0 5px"/>
+    <img src="https://skillicons.dev/icons?i=threejs" alt="Three.js" height="48" />
   </div>
-  <sub><sup>HTML • CSS • JavaScript • Bootstrap 5 • GitHub Pages</sup></sub>
+  <sub><sup>HTML5 • CSS3 • JavaScript (ES6+) • TailwindCSS • Alpine.js • Anime.js • Three.js</sup></sub>
 </div>
 
 <br>
@@ -83,27 +85,52 @@ O principal objetivo deste site é:
   
 ```mermaid
 graph TD
-    A[Site Portfolio] --> B[Frontend]
+    A[Site Portfolio] --> B[Base]
     B --> C[HTML5]
     B --> D[CSS3]
-    B --> E[JavaScript]
-    B --> F[Bootstrap 5]
-    A --> G[Hosting]
-    G --> H[GitHub Pages]
-    A --> I[Outros]
-    I --> J[Responsividade]
-    I --> K[Animações CSS]
+    B --> E[JavaScript ES6+]
+    A --> F[Framework CSS]
+    F --> G[TailwindCSS]
+    A --> H[Interatividade]
+    H --> I[Alpine.js]
+    A --> J[Animações]
+    J --> K[Anime.js]
+    A --> L[Efeitos 3D]
+    L --> M[Three.js]
+    A --> N[Hospedagem]
+    N --> O[GitHub Pages]
 ```
 
 </div>
 
-| Tecnologia | Propósito | Versão | Destaque |
-|------------|-----------|--------|----------|
-| **HTML5** | Estrutura semântica | - | Acessibilidade e SEO |
-| **CSS3** | Estilização | - | Variáveis CSS e animações |
-| **JavaScript** | Interatividade | ES6+ | Efeitos e validação |
-| **Bootstrap** | Framework CSS | 5.2.1 | Componentes responsivos |
-| **GitHub Pages** | Hospedagem | - | Deploy automático |
+| Tecnologia | Propósito | Implementação | Destaque |
+|------------|-----------|---------------|----------|
+| **HTML5** | Estrutura semântica | Via CDN | Acessibilidade e SEO |
+| **CSS3** | Estilização base | Nativo | Variáveis CSS |
+| **JavaScript** | Lógica e interações | ES6+ | Manipulação DOM e APIs modernas |
+| **TailwindCSS** | Framework CSS utilitário | Via CDN | Design responsivo sem CSS customizado |
+| **Alpine.js** | Interatividade declarativa | Via CDN | Componentes reativos leves |
+| **Anime.js** | Animações avançadas | Via CDN | Animações suaves e timeline |
+| **Three.js** | Gráficos 3D | Via CDN | Experiências 3D interativas |
+| **GitHub Pages** | Hospedagem | Nativo | Deploy automático |
+
+### Implementação via CDN (Sem Build)
+
+Esta stack foi escolhida para permitir desenvolvimento rápido sem necessidade de build ou tooling complexo, utilizando apenas CDNs para importar as bibliotecas:
+
+```html
+<!-- TailwindCSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Alpine.js -->
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<!-- Anime.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+<!-- Three.js -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.150.0/build/three.min.js"></script>
+```
 
 <br>
 
@@ -121,9 +148,9 @@ graph TD
     </tr>
     <tr>
       <td>Cores escuras com<br>acentos turquesa</td>
-      <td>Adaptável para<br>todos dispositivos</td>
-      <td>Transições suaves<br>e fade-in</td>
-      <td>Roboto + Fira Code<br>para código</td>
+      <td>TailwindCSS para<br>todos dispositivos</td>
+      <td>Anime.js para<br>animações suaves</td>
+      <td>Inter + Fira Code<br>para código</td>
     </tr>
   </table>
 </div>
@@ -139,10 +166,11 @@ graph TD
 
 ### 🧩 Funcionalidades
 
-- **📄 SPA Navigation**: Navegação suave com âncoras em página única
-- **🖼️ Portfolio Interativo**: Cards de projetos com animações hover
-- **📰 Blog Integrado**: Artigos técnicos com categorização
-- **📝 Formulário de Contato**: Interface direta para comunicação
+- **📄 SPA Navigation**: Navegação suave com Alpine.js para transições
+- **🖼️ Portfolio Interativo**: Cards de projetos com animações Anime.js
+- **🔮 Experiências 3D**: Elementos interativos com Three.js
+- **🎭 Interações Reativas**: Componentes dinâmicos com Alpine.js
+- **📝 Formulário de Contato**: Interface reativa para comunicação
 - **📄 Currículo**: Download do CV em formato PDF
 
 <br>
@@ -169,14 +197,19 @@ flowchart LR
 </div>
 
 <details>
-  <summary>🏠 <b>Home</b> - Introdução pessoal e chamada para ação</summary>
+  <summary>🏠 <b>Home</b> - Introdução pessoal com experiência 3D</summary>
   
   ```html
-  <section class="hero-section" id="home">
-    <div class="container">
-      <p class="code-font accent-text">Olá, meu nome é</p>
-      <h1 class="display-3 fw-bold">Govinda.</h1>
-      <h2 class="display-4 light-text">Transformo ideias em soluções inovadoras.</h2>
+  <section class="h-screen relative" id="home">
+    <div id="three-bg" class="absolute inset-0 -z-10"></div>
+    <div class="container mx-auto px-4 h-full flex items-center">
+      <div x-data="{ show: false }" x-init="setTimeout(() => show = true, 100)" 
+           :class="show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
+           class="transition-all duration-1000 ease-out">
+        <p class="font-mono text-accent">Olá, meu nome é</p>
+        <h1 class="text-5xl font-bold mt-2">Govinda.</h1>
+        <h2 class="text-4xl text-light mt-2">Transformo ideias em soluções inovadoras.</h2>
+      </div>
     </div>
   </section>
   ```
@@ -184,22 +217,22 @@ flowchart LR
 
 <details>
   <summary>👤 <b>Sobre</b> - Biografia profissional e habilidades técnicas</summary>
-  Apresentação pessoal, trajetória profissional, áreas de expertise e principais tecnologias dominadas.
+  Apresentação pessoal, trajetória profissional, áreas de expertise e principais tecnologias dominadas, com animações de entrada utilizando Anime.js.
 </details>
 
 <details>
-  <summary>💼 <b>Projetos</b> - Portfolio de trabalhos realizados</summary>
-  Apresentação dos projetos mais relevantes com descrições, tecnologias utilizadas e links para demos/repositórios.
+  <summary>💼 <b>Projetos</b> - Portfolio interativo com Alpine.js e Anime.js</summary>
+  Apresentação dos projetos mais relevantes com descrições, tecnologias utilizadas e links para demos/repositórios. Cards interativos com efeitos de hover.
 </details>
 
 <details>
-  <summary>📚 <b>Blog</b> - Artigos técnicos e compartilhamento de conhecimento</summary>
-  Artigos sobre desenvolvimento, tutoriais, análises de tecnologias e compartilhamento de experiências.
+  <summary>📚 <b>Blog</b> - Artigos técnicos com transições suaves</summary>
+  Artigos sobre desenvolvimento, tutoriais, análises de tecnologias e compartilhamento de experiências. Layout responsivo com TailwindCSS.
 </details>
 
 <details>
-  <summary>📞 <b>Contato</b> - Formulário para mensagens e informações</summary>
-  Formulário de contato e links para redes sociais e profissionais.
+  <summary>📞 <b>Contato</b> - Formulário reativo com Alpine.js</summary>
+  Formulário de contato reativo com validação em tempo real usando Alpine.js e efeitos de feedback com Anime.js.
 </details>
 
 <br>
@@ -232,13 +265,18 @@ Para personalizar este site para seu próprio uso:
     </tr>
     <tr>
       <td align="center">🎨</td>
-      <td><b>Cores</b></td>
-      <td>Personalize a paleta de cores em <code>:root</code> no CSS</td>
+      <td><b>TailwindCSS</b></td>
+      <td>Personalize o tema no objeto de configuração <code>tailwind.config</code></td>
     </tr>
     <tr>
-      <td align="center">📂</td>
-      <td><b>Projetos</b></td>
-      <td>Adicione seus próprios projetos e artigos de blog</td>
+      <td align="center">✨</td>
+      <td><b>Animações</b></td>
+      <td>Modifique as animações em <code>animations.js</code> com Anime.js</td>
+    </tr>
+    <tr>
+      <td align="center">🔮</td>
+      <td><b>3D</b></td>
+      <td>Altere cenas 3D em <code>three-scene.js</code> usando Three.js</td>
     </tr>
   </table>
 </div>
@@ -250,7 +288,7 @@ Para personalizar este site para seu próprio uso:
 <div align="center">
   <table>
     <tr>
-      <td><input type="checkbox"> <b>Jekyll Blog</b></td>
+      <td><input type="checkbox"> <b>Cenas 3D Avançadas</b></td>
       <td><input type="checkbox"> <b>Tema Claro/Escuro</b></td>
     </tr>
     <tr>
@@ -259,7 +297,7 @@ Para personalizar este site para seu próprio uso:
     </tr>
     <tr>
       <td><input type="checkbox"> <b>SEO Avançado</b></td>
-      <td><input type="checkbox"> <b>CMS Headless</b></td>
+      <td><input type="checkbox"> <b>Integração APIs</b></td>
     </tr>
   </table>
 </div>
