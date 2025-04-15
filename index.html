@@ -500,73 +500,49 @@
         <span class="h-px bg-light-gray/30 ml-4 flex-grow"></span>
       </h2>
       
-      <div class="grid md:grid-cols-3 gap-8" x-intersect:enter="$el.classList.add('animate-fadeIn')">
-        <!-- Blog Post 1 -->
-        <div class="group">
-          <div class="rounded-lg overflow-hidden mb-4">
-            <img src="https://via.placeholder.com/600x400?text=Blog+Post+Image" alt="Blog Post" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
-          </div>
-          <div class="space-y-2">
-            <div class="flex items-center space-x-2 text-sm">
-              <span class="text-light-gray">10 Jun 2023</span>
-              <span class="text-light-gray">•</span>
-              <span class="text-xs font-mono bg-turquoise/10 text-turquoise px-2 py-0.5 rounded-full">Desenvolvimento</span>
-            </div>
-            <h3 class="text-xl font-bold group-hover:text-turquoise transition-colors">Arquitetura de Microsserviços: Práticas e Desafios</h3>
-            <p class="text-light-gray">Uma análise aprofundada sobre a implementação de arquiteturas de microsserviços em projetos de grande escala.</p>
-            <a href="#" class="text-turquoise flex items-center hover:underline mt-4">
-              Ler mais <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
-            </a>
-          </div>
+      <div class="grid md:grid-cols-3 gap-8" x-data="blogPosts()" x-intersect:enter="$el.classList.add('animate-fadeIn')">
+        <!-- Loading State -->
+        <div x-show="loading" class="md:col-span-3 text-center py-12">
+          <div class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-turquoise border-r-2 border-light-gray mb-4"></div>
+          <p class="text-light-gray">Carregando posts do blog...</p>
         </div>
         
-        <!-- Blog Post 2 -->
-        <div class="group">
-          <div class="rounded-lg overflow-hidden mb-4">
-            <img src="https://via.placeholder.com/600x400?text=Blog+Post+Image" alt="Blog Post" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
-          </div>
-          <div class="space-y-2">
-            <div class="flex items-center space-x-2 text-sm">
-              <span class="text-light-gray">28 Mai 2023</span>
-              <span class="text-light-gray">•</span>
-              <span class="text-xs font-mono bg-turquoise/10 text-turquoise px-2 py-0.5 rounded-full">DevOps</span>
+        <!-- Blog Posts Dynamic List -->
+        <template x-for="(post, index) in posts" :key="index">
+          <div class="group">
+            <div class="rounded-lg overflow-hidden mb-4 bg-navy/50">
+              <div class="w-full h-56 bg-gradient-to-br from-navy to-dark-blue flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                <div class="w-16 h-16 rounded-full bg-turquoise/10 flex items-center justify-center">
+                  <i class="bi" :class="getCategoryIcon(post.category)"></i>
+                </div>
+              </div>
             </div>
-            <h3 class="text-xl font-bold group-hover:text-turquoise transition-colors">CI/CD: Automatizando o Ciclo de Desenvolvimento</h3>
-            <p class="text-light-gray">Como implementar uma pipeline de integração e entrega contínua que funcione efetivamente para equipes distribuídas.</p>
-            <a href="#" class="text-turquoise flex items-center hover:underline mt-4">
-              Ler mais <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
-            </a>
+            <div class="space-y-2">
+              <div class="flex items-center space-x-2 text-sm">
+                <span class="text-light-gray" x-text="formatDate(post.date)"></span>
+                <span class="text-light-gray">•</span>
+                <span class="text-xs font-mono bg-turquoise/10 text-turquoise px-2 py-0.5 rounded-full" x-text="post.category"></span>
+              </div>
+              <h3 class="text-xl font-bold group-hover:text-turquoise transition-colors" x-text="post.title"></h3>
+              <p class="text-light-gray" x-text="post.snippet || 'Clique para ler mais sobre este post.'"></p>
+              <a :href="post.url" target="_blank" class="text-turquoise flex items-center hover:underline mt-4">
+                Ler mais <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </a>
+            </div>
           </div>
-        </div>
+        </template>
         
-        <!-- Blog Post 3 -->
-        <div class="group">
-          <div class="rounded-lg overflow-hidden mb-4">
-            <img src="https://via.placeholder.com/600x400?text=Blog+Post+Image" alt="Blog Post" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
-          </div>
-          <div class="space-y-2">
-            <div class="flex items-center space-x-2 text-sm">
-              <span class="text-light-gray">15 Mai 2023</span>
-              <span class="text-light-gray">•</span>
-              <span class="text-xs font-mono bg-turquoise/10 text-turquoise px-2 py-0.5 rounded-full">Frontend</span>
-            </div>
-            <h3 class="text-xl font-bold group-hover:text-turquoise transition-colors">React Performance: Otimizando Aplicações Complexas</h3>
-            <p class="text-light-gray">Técnicas avançadas para melhorar a performance de aplicações React com estados complexos e muitos componentes.</p>
-            <a href="#" class="text-turquoise flex items-center hover:underline mt-4">
-              Ler mais <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
-            </a>
-          </div>
+        <!-- No Posts Message -->
+        <div x-show="!loading && posts.length === 0" class="md:col-span-3 text-center py-12">
+          <i class="bi bi-journal-x text-turquoise text-5xl mb-4"></i>
+          <p class="text-light-gray">Não foi possível carregar os posts do blog. Tente novamente mais tarde.</p>
         </div>
       </div>
       
       <div class="text-center mt-12" x-intersect:enter="$el.classList.add('animate-fadeIn')">
-        <a href="#" class="inline-block px-6 py-3 border border-turquoise text-turquoise rounded hover:bg-turquoise/10 transition-all">
+        <a href="https://govinda777.github.io/blog/" target="_blank" class="inline-block px-6 py-3 border border-turquoise text-turquoise rounded hover:bg-turquoise/10 transition-all">
           Ver todos os artigos
         </a>
       </div>
@@ -1054,5 +1030,107 @@
       100% { transform: scale(1); }
     }
   </style>
+
+  <!-- Blog Posts Component Script -->
+  <script>
+    // Blog Posts Component
+    function blogPosts() {
+      return {
+        posts: [],
+        loading: true,
+        init() {
+          this.fetchBlogPosts();
+        },
+        async fetchBlogPosts() {
+          try {
+            // Na implementação real, você buscaria posts do blog via API
+            // Como isso é uma simulação baseada na URL do blog fornecida, usaremos dados estáticos
+            
+            this.loading = true;
+            
+            // Simular uma chamada API
+            await new Promise(resolve => setTimeout(resolve, 800));
+            
+            this.posts = [
+              {
+                title: "Oxalá é quem guia",
+                date: "2025-01-11",
+                category: "Clipe",
+                url: "https://govinda777.github.io/blog/2025-01-11-Oxala-he-quem-guia/",
+                snippet: "Uma reflexão espiritual sobre fé e guiança."
+              },
+              {
+                title: "Carteiras Digitais vs Contas Bancárias: Uma Nova Era Financeira",
+                date: "2024-12-07",
+                category: "Artigo",
+                url: "https://govinda777.github.io/blog/2024-12-07-Carteiras-Digitais-vs-Contas-Bancarias--Uma-Nova-Era-Financeira/",
+                snippet: "Análise comparativa entre métodos de pagamento tradicionais e tecnologias emergentes."
+              },
+              {
+                title: "Descentralização e Sua Importância na Tecnologia Blockchain",
+                date: "2024-12-07",
+                category: "Artigo",
+                url: "https://govinda777.github.io/blog/2024-12-07-Descentralizacao-e-Sua-Importancia-na-Tecnologia-Blockchain/",
+                snippet: "Uma visão profunda sobre os princípios da descentralização e seu impacto nas tecnologias blockchain."
+              },
+              {
+                title: "Ferramentas para Executar Código Diretamente a partir do README no GitHub",
+                date: "2024-10-31",
+                category: "Artigo",
+                url: "https://govinda777.github.io/blog/2024-10-31-Ferramentas-para-Executar-Código-Diretamente-a-partir-do-README-no-GitHub/",
+                snippet: "Guia prático sobre como utilizar ferramentas que permitem executar código diretamente de arquivos README."
+              },
+              {
+                title: "Plano de Estudos para Primeiro Emprego em Desenvolvimento de Software",
+                date: "2024-10-31", 
+                category: "Artigo",
+                url: "https://govinda777.github.io/blog/2024-10-31-Plano-de-Estudos-para-Primeiro-Emprego-em-Desenvolvimento-de-Software/",
+                snippet: "Roteiro para quem busca ingressar no mercado de desenvolvimento de software."
+              },
+              {
+                title: "A Sinfonia do Controle",
+                date: "2024-10-27",
+                category: "Poema",
+                url: "https://govinda777.github.io/blog/2024-10-27-A-Sinfonia-do-Controle/",
+                snippet: "Expressão poética sobre o equilíbrio entre controle e liberdade."
+              }
+            ];
+            
+            this.loading = false;
+          } catch (error) {
+            console.error('Erro ao buscar posts do blog:', error);
+            this.posts = [];
+            this.loading = false;
+          }
+        },
+        formatDate(dateString) {
+          // Converter formato YYYY-MM-DD para DD/MM/YYYY
+          if (!dateString) return '';
+          
+          const [year, month, day] = dateString.split('-');
+          return `${day || ''}/${month || ''}/${year || ''}`;
+        },
+        getCategoryIcon(category) {
+          const icons = {
+            'Artigo': 'bi-file-text',
+            'Poema': 'bi-pen',
+            'Conto': 'bi-book',
+            'Clipe': 'bi-music-note-beamed',
+            'Projeto': 'bi-kanban',
+            'Livro': 'bi-journals',
+            'Dossiê': 'bi-folder2-open',
+            'Dinamica': 'bi-people',
+            'Tecnologia': 'bi-cpu',
+            'WEB3': 'bi-hdd-network',
+            'Biografia': 'bi-person-badge',
+            'Agilidade': 'bi-lightning',
+            'Lesões': 'bi-bandaid'
+          };
+          
+          return icons[category] || 'bi-file-earmark';
+        }
+      }
+    }
+  </script>
 </body>
 </html>
