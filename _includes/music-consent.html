@@ -1,0 +1,24 @@
+<!-- Music Consent Modal -->
+<div x-show="showMusicPrompt" 
+     class="fixed inset-0 flex items-center justify-center z-50 bg-black/70 backdrop-blur-sm"
+     x-transition:enter="transition ease-out duration-300"
+     x-transition:enter-start="opacity-0"
+     x-transition:enter-end="opacity-100"
+     x-transition:leave="transition ease-in duration-200"
+     x-transition:leave-start="opacity-100"
+     x-transition:leave-end="opacity-0">
+  <div class="bg-navy p-6 rounded-lg max-w-md mx-4 border border-turquoise/20">
+    <h3 class="text-xl font-bold mb-4">Experiência Musical</h3>
+    <p class="text-light-gray mb-6">Gostaria de ativar a música de fundo para uma experiência imersiva?</p>
+    <div class="flex gap-4">
+      <button @click="musicConsent = 'yes'; localStorage.setItem('musicConsent', 'yes'); showMusicPrompt = false; playBackgroundMusic()" 
+              class="px-4 py-2 bg-transparent border border-turquoise text-turquoise rounded hover:bg-turquoise/10 transition-all">
+        Sim, por favor
+      </button>
+      <button @click="musicConsent = 'no'; localStorage.setItem('musicConsent', 'no'); showMusicPrompt = false" 
+              class="px-4 py-2 bg-transparent border border-light-gray text-light-gray rounded hover:bg-light-gray/10 transition-all">
+        Não, obrigado
+      </button>
+    </div>
+  </div>
+</div> 

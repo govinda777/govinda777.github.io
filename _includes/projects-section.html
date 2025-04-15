@@ -1,0 +1,138 @@
+<!-- Projects Section -->
+<section id="projects" class="py-20 min-h-screen">
+  <div class="container mx-auto px-4" x-data="{ activeProject: null }">
+    <h2 class="text-3xl font-bold mb-2">Projetos</h2>
+    <div class="w-16 h-1 bg-turquoise mb-10"></div>
+    
+    <p class="text-light-gray max-w-3xl mb-12">
+      Aqui estão alguns dos meus projetos recentes. Cada projeto reflete minha paixão por desenvolver soluções inovadoras e funcionais.
+    </p>
+    
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Project 1 -->
+      <div class="bg-dark-navy p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+           x-data="{ show: false }" 
+           x-intersect="show = true; anime({
+             targets: $el,
+             opacity: [0, 1],
+             translateY: [20, 0],
+             duration: 800,
+             easing: 'easeOutExpo',
+             delay: 100
+           })">
+        <div class="mb-4">
+          <img src="assets/project1.jpg" alt="Projeto 1" class="w-full h-48 object-cover rounded">
+        </div>
+        <h3 class="text-xl font-bold mb-2">Projeto 1</h3>
+        <p class="text-light-gray mb-4">Descrição do projeto com detalhes sobre a implementação e tecnologias utilizadas.</p>
+        <div class="flex flex-wrap mb-4">
+          <span class="bg-dark-blue text-turquoise text-xs rounded px-2 py-1 mr-2 mb-2">React</span>
+          <span class="bg-dark-blue text-turquoise text-xs rounded px-2 py-1 mr-2 mb-2">Node.js</span>
+          <span class="bg-dark-blue text-turquoise text-xs rounded px-2 py-1 mr-2 mb-2">MongoDB</span>
+        </div>
+        <div class="flex justify-between">
+          <a href="#" class="text-turquoise hover:underline" target="_blank">
+            <i class="fas fa-external-link-alt mr-1"></i> Demo
+          </a>
+          <a href="#" class="text-turquoise hover:underline" target="_blank">
+            <i class="fab fa-github mr-1"></i> GitHub
+          </a>
+        </div>
+      </div>
+      
+      <!-- Project 2 -->
+      <div class="bg-dark-navy p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+           x-data="{ show: false }" 
+           x-intersect="show = true; anime({
+             targets: $el,
+             opacity: [0, 1],
+             translateY: [20, 0],
+             duration: 800,
+             easing: 'easeOutExpo',
+             delay: 200
+           })">
+        <div class="mb-4">
+          <img src="assets/project2.jpg" alt="Projeto 2" class="w-full h-48 object-cover rounded">
+        </div>
+        <h3 class="text-xl font-bold mb-2">Projeto 2</h3>
+        <p class="text-light-gray mb-4">Descrição do projeto com detalhes sobre a implementação e tecnologias utilizadas.</p>
+        <div class="flex flex-wrap mb-4">
+          <span class="bg-dark-blue text-turquoise text-xs rounded px-2 py-1 mr-2 mb-2">Vue.js</span>
+          <span class="bg-dark-blue text-turquoise text-xs rounded px-2 py-1 mr-2 mb-2">Express</span>
+          <span class="bg-dark-blue text-turquoise text-xs rounded px-2 py-1 mr-2 mb-2">PostgreSQL</span>
+        </div>
+        <div class="flex justify-between">
+          <a href="#" class="text-turquoise hover:underline" target="_blank">
+            <i class="fas fa-external-link-alt mr-1"></i> Demo
+          </a>
+          <a href="#" class="text-turquoise hover:underline" target="_blank">
+            <i class="fab fa-github mr-1"></i> GitHub
+          </a>
+        </div>
+      </div>
+      
+      <!-- Project 3 -->
+      <div class="bg-dark-navy p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+           x-data="{ show: false }" 
+           x-intersect="show = true; anime({
+             targets: $el,
+             opacity: [0, 1],
+             translateY: [20, 0],
+             duration: 800,
+             easing: 'easeOutExpo',
+             delay: 300
+           })">
+        <div class="mb-4">
+          <img src="assets/project3.jpg" alt="Projeto 3" class="w-full h-48 object-cover rounded">
+        </div>
+        <h3 class="text-xl font-bold mb-2">Projeto 3</h3>
+        <p class="text-light-gray mb-4">Descrição do projeto com detalhes sobre a implementação e tecnologias utilizadas.</p>
+        <div class="flex flex-wrap mb-4">
+          <span class="bg-dark-blue text-turquoise text-xs rounded px-2 py-1 mr-2 mb-2">Angular</span>
+          <span class="bg-dark-blue text-turquoise text-xs rounded px-2 py-1 mr-2 mb-2">.NET Core</span>
+          <span class="bg-dark-blue text-turquoise text-xs rounded px-2 py-1 mr-2 mb-2">SQL Server</span>
+        </div>
+        <div class="flex justify-between">
+          <a href="#" class="text-turquoise hover:underline" target="_blank">
+            <i class="fas fa-external-link-alt mr-1"></i> Demo
+          </a>
+          <a href="#" class="text-turquoise hover:underline" target="_blank">
+            <i class="fab fa-github mr-1"></i> GitHub
+          </a>
+        </div>
+      </div>
+      
+      <!-- Project 4 -->
+      <div class="bg-dark-navy p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+           x-data="{ show: false }" 
+           x-intersect="show = true; anime({
+             targets: $el,
+             opacity: [0, 1],
+             translateY: [20, 0],
+             duration: 800,
+             easing: 'easeOutExpo',
+             delay: 400
+           })">
+        <div class="mb-4">
+          <img src="assets/project4.jpg" alt="Projeto 4" class="w-full h-48 object-cover rounded">
+        </div>
+        <h3 class="text-xl font-bold mb-2">Projeto 4</h3>
+        <p class="text-light-gray mb-4">Descrição do projeto com detalhes sobre a implementação e tecnologias utilizadas.</p>
+        <div class="flex flex-wrap mb-4">
+          <span class="bg-dark-blue text-turquoise text-xs rounded px-2 py-1 mr-2 mb-2">React Native</span>
+          <span class="bg-dark-blue text-turquoise text-xs rounded px-2 py-1 mr-2 mb-2">Firebase</span>
+          <span class="bg-dark-blue text-turquoise text-xs rounded px-2 py-1 mr-2 mb-2">Redux</span>
+        </div>
+        <div class="flex justify-between">
+          <a href="#" class="text-turquoise hover:underline" target="_blank">
+            <i class="fas fa-external-link-alt mr-1"></i> Demo
+          </a>
+          <a href="#" class="text-turquoise hover:underline" target="_blank">
+            <i class="fab fa-github mr-1"></i> GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 

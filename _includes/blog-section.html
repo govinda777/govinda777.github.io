@@ -1,0 +1,126 @@
+<!-- Blog Section -->
+<section id="blog" class="py-20 min-h-screen bg-dark-navy">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-2">Blog</h2>
+    <div class="w-16 h-1 bg-turquoise mb-10"></div>
+    
+    <p class="text-light-gray max-w-3xl mb-12">
+      Compartilhando conhecimento, experiências e insights sobre desenvolvimento, tecnologias e boas práticas.
+    </p>
+    
+    <!-- Blog Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Article 1 -->
+      <div class="group"
+           x-data="{ show: false }" 
+           x-intersect="show = true; anime({
+             targets: $el,
+             opacity: [0, 1],
+             translateY: [20, 0],
+             duration: 800,
+             easing: 'easeOutExpo',
+             delay: 100
+           })">
+        <a href="#" class="block">
+          <div class="mb-4 overflow-hidden rounded">
+            <img src="assets/blog1.jpg" alt="Artigo 1" 
+                 class="w-full h-60 object-cover rounded transform transition-transform duration-500 group-hover:scale-105">
+          </div>
+          <div class="mb-2">
+            <span class="text-turquoise text-sm">01 Junho, 2023</span>
+            <span class="text-light-gray mx-2">•</span>
+            <span class="text-light-gray text-sm">Desenvolvimento Web</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2 group-hover:text-turquoise transition-colors duration-300">
+            Construindo aplicações React escaláveis: Melhores práticas
+          </h3>
+          <p class="text-light-gray">
+            Aprenda estratégias e padrões para desenvolver aplicações React que escalam bem à medida que seu projeto cresce, mantendo a legibilidade e performance.
+          </p>
+          <p class="mt-4 text-turquoise inline-flex items-center group-hover:underline">
+            Leia mais <svg class="w-4 h-4 ml-2 transform transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </p>
+        </a>
+      </div>
+      
+      <!-- Article 2 -->
+      <div class="group"
+           x-data="{ show: false }" 
+           x-intersect="show = true; anime({
+             targets: $el,
+             opacity: [0, 1],
+             translateY: [20, 0],
+             duration: 800,
+             easing: 'easeOutExpo',
+             delay: 200
+           })">
+        <a href="#" class="block">
+          <div class="mb-4 overflow-hidden rounded">
+            <img src="assets/blog2.jpg" alt="Artigo 2" 
+                 class="w-full h-60 object-cover rounded transform transition-transform duration-500 group-hover:scale-105">
+          </div>
+          <div class="mb-2">
+            <span class="text-turquoise text-sm">15 Maio, 2023</span>
+            <span class="text-light-gray mx-2">•</span>
+            <span class="text-light-gray text-sm">Backend</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2 group-hover:text-turquoise transition-colors duration-300">
+            Microsserviços com Node.js: Quando e como implementar
+          </h3>
+          <p class="text-light-gray">
+            Um guia completo sobre quando adotar uma arquitetura de microsserviços e como implementá-la eficientemente usando Node.js.
+          </p>
+          <p class="mt-4 text-turquoise inline-flex items-center group-hover:underline">
+            Leia mais <svg class="w-4 h-4 ml-2 transform transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </p>
+        </a>
+      </div>
+      
+      <!-- Article 3 -->
+      <div class="group"
+           x-data="{ show: false }" 
+           x-intersect="show = true; anime({
+             targets: $el,
+             opacity: [0, 1],
+             translateY: [20, 0],
+             duration: 800,
+             easing: 'easeOutExpo',
+             delay: 300
+           })">
+        <a href="#" class="block">
+          <div class="mb-4 overflow-hidden rounded">
+            <img src="assets/blog3.jpg" alt="Artigo 3" 
+                 class="w-full h-60 object-cover rounded transform transition-transform duration-500 group-hover:scale-105">
+          </div>
+          <div class="mb-2">
+            <span class="text-turquoise text-sm">30 Abril, 2023</span>
+            <span class="text-light-gray mx-2">•</span>
+            <span class="text-light-gray text-sm">DevOps</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2 group-hover:text-turquoise transition-colors duration-300">
+            CI/CD com GitHub Actions: Automatizando seu fluxo de trabalho
+          </h3>
+          <p class="text-light-gray">
+            Aprenda a configurar pipelines de integração e entrega contínua usando GitHub Actions, aumentando a produtividade e qualidade do código.
+          </p>
+          <p class="mt-4 text-turquoise inline-flex items-center group-hover:underline">
+            Leia mais <svg class="w-4 h-4 ml-2 transform transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </p>
+        </a>
+      </div>
+      
+      <!-- All Posts Button -->
+      <div class="md:col-span-2 text-center mt-12">
+        <a href="#" class="inline-block px-6 py-3 border border-turquoise text-turquoise rounded hover:bg-turquoise/10 transition-all">
+          Ver todos os artigos
+        </a>
+      </div>
+    </div>
+  </div>
+</section> 

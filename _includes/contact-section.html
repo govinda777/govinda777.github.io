@@ -1,0 +1,176 @@
+<!-- Contact Section -->
+<section id="contact" class="py-20 min-h-screen">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-2">Contato</h2>
+    <div class="w-16 h-1 bg-turquoise mb-10"></div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div x-data="{ show: false }" 
+           x-intersect="show = true; anime({
+             targets: $el,
+             opacity: [0, 1],
+             translateY: [20, 0],
+             duration: 800,
+             easing: 'easeOutExpo'
+           })">
+        <p class="text-light-gray max-w-lg mb-8">
+          Interessado em trabalhar juntos? Tem alguma pergunta ou proposta, ou apenas quer dizer olá? Fique à vontade para entrar em contato.
+        </p>
+        
+        <div class="mb-8">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-dark-navy flex items-center justify-center mr-4">
+              <svg class="w-5 h-5 text-turquoise" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold mb-1">Email</h3>
+              <a href="mailto:seu-email@exemplo.com" class="text-turquoise hover:underline">seu-email@exemplo.com</a>
+            </div>
+          </div>
+          
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-dark-navy flex items-center justify-center mr-4">
+              <svg class="w-5 h-5 text-turquoise" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold mb-1">LinkedIn</h3>
+              <a href="https://linkedin.com/in/seu-linkedin" target="_blank" class="text-turquoise hover:underline">linkedin.com/in/seu-linkedin</a>
+            </div>
+          </div>
+          
+          <div class="flex items-center">
+            <div class="w-12 h-12 rounded-full bg-dark-navy flex items-center justify-center mr-4">
+              <svg class="w-5 h-5 text-turquoise" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold mb-1">GitHub</h3>
+              <a href="https://github.com/govinda777" target="_blank" class="text-turquoise hover:underline">github.com/govinda777</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flex space-x-4">
+          <a href="https://linkedin.com/in/seu-linkedin" target="_blank" class="w-10 h-10 rounded-full bg-dark-navy flex items-center justify-center hover:bg-turquoise/20 transition-colors">
+            <i class="fab fa-linkedin-in text-turquoise"></i>
+          </a>
+          <a href="https://github.com/govinda777" target="_blank" class="w-10 h-10 rounded-full bg-dark-navy flex items-center justify-center hover:bg-turquoise/20 transition-colors">
+            <i class="fab fa-github text-turquoise"></i>
+          </a>
+          <a href="https://twitter.com/seu-twitter" target="_blank" class="w-10 h-10 rounded-full bg-dark-navy flex items-center justify-center hover:bg-turquoise/20 transition-colors">
+            <i class="fab fa-twitter text-turquoise"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div x-data="{ 
+             formData: { name: '', email: '', message: '' },
+             errors: { name: '', email: '', message: '' },
+             sending: false,
+             success: false,
+             
+             validateEmail(email) {
+               return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+             },
+             
+             validate() {
+               this.errors.name = !this.formData.name ? 'Nome é obrigatório' : '';
+               this.errors.email = !this.formData.email ? 'Email é obrigatório' : 
+                                  !this.validateEmail(this.formData.email) ? 'Email inválido' : '';
+               this.errors.message = !this.formData.message ? 'Mensagem é obrigatória' : '';
+               
+               return !this.errors.name && !this.errors.email && !this.errors.message;
+             },
+             
+             submitForm() {
+               if (this.validate()) {
+                 this.sending = true;
+                 // Simulação de envio de formulário
+                 setTimeout(() => {
+                   this.sending = false;
+                   this.success = true;
+                   this.formData = { name: '', email: '', message: '' };
+                   
+                   anime({
+                     targets: '.success-message',
+                     opacity: [0, 1],
+                     translateY: [20, 0],
+                     duration: 800,
+                     easing: 'easeOutExpo'
+                   });
+                   
+                   setTimeout(() => {
+                     this.success = false;
+                   }, 5000);
+                 }, 1500);
+               }
+             }
+           }"
+           x-intersect="anime({
+             targets: $el,
+             opacity: [0, 1],
+             translateY: [20, 0],
+             duration: 800,
+             easing: 'easeOutExpo',
+             delay: 200
+           })">
+        <form @submit.prevent="submitForm" class="bg-dark-navy p-8 rounded-lg shadow-lg">
+          <div class="mb-6">
+            <label for="name" class="block text-sm font-medium mb-2">Nome</label>
+            <input 
+              type="text" 
+              id="name" 
+              x-model="formData.name"
+              @blur="validate()"
+              class="w-full px-4 py-3 bg-dark-blue rounded border border-gray-700 focus:border-turquoise focus:ring-1 focus:ring-turquoise focus:outline-none transition-colors"
+              :class="{'border-red-500': errors.name}"
+            >
+            <p x-show="errors.name" x-text="errors.name" class="mt-2 text-red-500 text-sm"></p>
+          </div>
+          
+          <div class="mb-6">
+            <label for="email" class="block text-sm font-medium mb-2">Email</label>
+            <input 
+              type="email" 
+              id="email" 
+              x-model="formData.email"
+              @blur="validate()"
+              class="w-full px-4 py-3 bg-dark-blue rounded border border-gray-700 focus:border-turquoise focus:ring-1 focus:ring-turquoise focus:outline-none transition-colors"
+              :class="{'border-red-500': errors.email}"
+            >
+            <p x-show="errors.email" x-text="errors.email" class="mt-2 text-red-500 text-sm"></p>
+          </div>
+          
+          <div class="mb-6">
+            <label for="message" class="block text-sm font-medium mb-2">Mensagem</label>
+            <textarea 
+              id="message" 
+              rows="5" 
+              x-model="formData.message"
+              @blur="validate()"
+              class="w-full px-4 py-3 bg-dark-blue rounded border border-gray-700 focus:border-turquoise focus:ring-1 focus:ring-turquoise focus:outline-none transition-colors"
+              :class="{'border-red-500': errors.message}"
+            ></textarea>
+            <p x-show="errors.message" x-text="errors.message" class="mt-2 text-red-500 text-sm"></p>
+          </div>
+          
+          <button 
+            type="submit"
+            :disabled="sending"
+            class="w-full py-3 px-6 bg-turquoise text-dark-blue font-bold rounded hover:bg-turquoise/90 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-turquoise"
+            x-html="sending ? '<svg class=\'animate-spin -ml-1 mr-2 h-4 w-4 inline-block\' xmlns=\'http://www.w3.org/2000/svg\' fill=\'none\' viewBox=\'0 0 24 24\'><circle class=\'opacity-25\' cx=\'12\' cy=\'12\' r=\'10\' stroke=\'currentColor\' stroke-width=\'4\'></circle><path class=\'opacity-75\' fill=\'currentColor\' d=\'M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z\'></path></svg> Enviando...' : 'Enviar mensagem'"
+          ></button>
+          
+          <div x-show="success" class="success-message mt-4 p-4 bg-green-500/20 text-green-500 rounded">
+            Mensagem enviada com sucesso! Entrarei em contato em breve.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section> 

@@ -1,0 +1,31 @@
+{
+  "name": "govinda777.github.io",
+  "version": "1.0.0",
+  "description": "Portfolio pessoal e profissional de Govinda",
+  "main": "index.js",
+  "scripts": {
+    "start": "bundle exec jekyll serve",
+    "build": "bundle exec jekyll build",
+    "clean": "bundle exec jekyll clean",
+    "install": "bundle install",
+    "dev": "bundle exec jekyll serve --livereload",
+    "update": "bundle update"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/govinda777/govinda777.github.io.git"
+  },
+  "keywords": [
+    "portfolio",
+    "jekyll",
+    "website",
+    "developer"
+  ],
+  "author": "Govinda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/govinda777/govinda777.github.io/issues"
+  },
+  "homepage": "https://github.com/govinda777/govinda777.github.io#readme",
+  "devDependencies": {}
+}

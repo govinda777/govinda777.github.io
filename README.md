@@ -1,3 +1,5 @@
+# Portfolio de Govinda
+
 <div align="center">
   <img src="assets/govinda777.jpeg" alt="Govinda" width="200" height="200" style="border-radius: 50%; border: 3px solid #64FFDA;">
   
@@ -241,45 +243,116 @@ flowchart LR
 
 ### 💻 Visualização Local
 
+Este site utiliza Jekyll, um gerador de sites estáticos, para facilitar a manutenção e permitir a divisão do conteúdo em arquivos menores.
+
+#### Pré-requisitos
+
+Antes de começar, você precisará ter instalado:
+
+1. **Ruby** (versão 2.5.0 ou superior)
+   - macOS: Já vem instalado ou use `brew install ruby`
+   - Windows: [RubyInstaller](https://rubyinstaller.org/)
+   - Linux: `sudo apt-get install ruby-full`
+
+2. **Bundler** e **Jekyll**
+   ```bash
+   gem install bundler jekyll
+   ```
+
+#### Instalação
+
 1. Clone o repositório:
    ```bash
    git clone https://github.com/govinda777/govinda777.github.io.git
+   cd govinda777.github.io
    ```
-2. Abra o arquivo `index.html` em qualquer navegador moderno
 
-### 🛠️ Personalização
+2. Instale as dependências:
+   ```bash
+   npm run install
+   # OU
+   bundle install
+   ```
 
-Para personalizar este site para seu próprio uso:
+#### Execução
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center">🖼️</td>
-      <td><b>Imagens</b></td>
-      <td>Substitua as imagens em <code>/assets</code> com suas próprias fotos</td>
-    </tr>
-    <tr>
-      <td align="center">📝</td>
-      <td><b>Conteúdo</b></td>
-      <td>Atualize o conteúdo nas seções do <code>index.html</code></td>
-    </tr>
-    <tr>
-      <td align="center">🎨</td>
-      <td><b>TailwindCSS</b></td>
-      <td>Personalize o tema no objeto de configuração <code>tailwind.config</code></td>
-    </tr>
-    <tr>
-      <td align="center">✨</td>
-      <td><b>Animações</b></td>
-      <td>Modifique as animações em <code>animations.js</code> com Anime.js</td>
-    </tr>
-    <tr>
-      <td align="center">🔮</td>
-      <td><b>3D</b></td>
-      <td>Altere cenas 3D em <code>three-scene.js</code> usando Three.js</td>
-    </tr>
-  </table>
-</div>
+Existem várias formas de executar o site localmente:
+
+#### Usando NPM (recomendado)
+
+```bash
+# Iniciar o servidor Jekyll
+npm start
+
+# Iniciar com live reload (atualização automática ao salvar arquivos)
+npm run dev
+
+# Construir o site para produção
+npm run build
+
+# Limpar arquivos gerados
+npm run clean
+
+# Atualizar dependências
+npm run update
+```
+
+#### Usando Bundler diretamente
+
+```bash
+# Iniciar o servidor Jekyll
+bundle exec jekyll serve
+
+# Iniciar com live reload
+bundle exec jekyll serve --livereload
+
+# Construir o site para produção
+bundle exec jekyll build
+```
+
+3. Acesse o site em [http://localhost:4000](http://localhost:4000)
+
+## Estrutura do Projeto
+
+```
+- _includes/        # Componentes e seções individuais
+- _layouts/         # Templates de layout 
+- assets/           # CSS, JavaScript e imagens
+  - css/
+  - js/
+  - img/
+- index.html        # Home page com front matter
+- _config.yml       # Configuração do Jekyll
+- Gemfile           # Dependências Ruby/Jekyll
+```
+
+## Adicionando Novas Seções
+
+1. Crie um novo arquivo em `_includes/` com o nome da seção (ex: `projects-section.html`)
+2. Adicione o HTML da seção neste arquivo
+3. Inclua a seção em `index.html` com:
+   ```
+
+   ```
+
+## Deploy
+
+O site é hospedado no GitHub Pages, que suporta Jekyll nativamente. Para fazer deploy:
+
+```bash
+git add .
+git commit -m "Sua mensagem de commit"
+git push origin main
+```
+
+O GitHub Pages irá automaticamente construir e publicar o site.
+
+## Recursos Adicionais
+
+Para mais informações sobre como personalizar seu site Jekyll, consulte:
+- [Documentação Jekyll](https://jekyllrb.com/docs/)
+- [GitHub Pages + Jekyll](https://docs.github.com/pt/pages/setting-up-a-github-pages-site-with-jekyll)
+- [Temas Jekyll](https://jekyllthemes.io/)
 
 <br>
 

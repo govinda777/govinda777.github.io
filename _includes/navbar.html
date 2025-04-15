@@ -1,0 +1,78 @@
+<!-- Navbar -->
+<nav class="fixed top-0 w-full z-40 bg-dark-blue/85 backdrop-blur-md py-4 shadow-lg"
+     x-data="{ scrolled: false }"
+     @scroll.window="scrolled = window.pageYOffset > 20"
+     :class="{ 'py-2': scrolled, 'py-4': !scrolled }">
+  <div class="container mx-auto px-4 flex justify-between items-center">
+    <a href="#" class="text-turquoise font-bold text-2xl font-mono">G</a>
+    
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex items-center space-x-8">
+      <a href="#home" @click="section = 'home'" :class="section === 'home' ? 'text-turquoise' : 'text-white hover:text-turquoise'" class="transition-colors">
+        <span class="font-mono text-turquoise">01.</span> Home
+      </a>
+      <a href="#about" @click="section = 'about'" :class="section === 'about' ? 'text-turquoise' : 'text-white hover:text-turquoise'" class="transition-colors">
+        <span class="font-mono text-turquoise">02.</span> Sobre
+      </a>
+      <a href="#projects" @click="section = 'projects'" :class="section === 'projects' ? 'text-turquoise' : 'text-white hover:text-turquoise'" class="transition-colors">
+        <span class="font-mono text-turquoise">03.</span> Projetos
+      </a>
+      <a href="#repositories" @click="section = 'repositories'" :class="section === 'repositories' ? 'text-turquoise' : 'text-white hover:text-turquoise'" class="transition-colors">
+        <span class="font-mono text-turquoise">04.</span> Repositórios
+      </a>
+      <a href="#blog" @click="section = 'blog'" :class="section === 'blog' ? 'text-turquoise' : 'text-white hover:text-turquoise'" class="transition-colors">
+        <span class="font-mono text-turquoise">05.</span> Blog
+      </a>
+      <a href="#contact" @click="section = 'contact'" :class="section === 'contact' ? 'text-turquoise' : 'text-white hover:text-turquoise'" class="transition-colors">
+        <span class="font-mono text-turquoise">06.</span> Contato
+      </a>
+      <a href="assets/govinda777.pdf" target="_blank" class="px-4 py-2 border border-turquoise text-turquoise rounded hover:bg-turquoise/10 transition-all">
+        Currículo
+      </a>
+    </div>
+    
+    <!-- Mobile Menu Button -->
+    <button @click="menuOpen = !menuOpen" class="md:hidden text-white focus:outline-none">
+      <svg x-show="!menuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg x-show="menuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+  
+  <!-- Mobile Menu -->
+  <div x-show="menuOpen" 
+       x-transition:enter="transition ease-out duration-200"
+       x-transition:enter-start="opacity-0 transform -translate-y-4"
+       x-transition:enter-end="opacity-100 transform translate-y-0"
+       x-transition:leave="transition ease-in duration-150"
+       x-transition:leave-start="opacity-100 transform translate-y-0"
+       x-transition:leave-end="opacity-0 transform -translate-y-4"
+       class="md:hidden absolute top-full left-0 w-full bg-navy shadow-lg py-4">
+    <div class="container mx-auto px-4 flex flex-col space-y-4">
+      <a href="#home" @click="section = 'home'; menuOpen = false" class="py-2 px-4 hover:bg-dark-blue/50 rounded transition-all">
+        <span class="font-mono text-turquoise">01.</span> Home
+      </a>
+      <a href="#about" @click="section = 'about'; menuOpen = false" class="py-2 px-4 hover:bg-dark-blue/50 rounded transition-all">
+        <span class="font-mono text-turquoise">02.</span> Sobre
+      </a>
+      <a href="#projects" @click="section = 'projects'; menuOpen = false" class="py-2 px-4 hover:bg-dark-blue/50 rounded transition-all">
+        <span class="font-mono text-turquoise">03.</span> Projetos
+      </a>
+      <a href="#repositories" @click="section = 'repositories'; menuOpen = false" class="py-2 px-4 hover:bg-dark-blue/50 rounded transition-all">
+        <span class="font-mono text-turquoise">04.</span> Repositórios
+      </a>
+      <a href="#blog" @click="section = 'blog'; menuOpen = false" class="py-2 px-4 hover:bg-dark-blue/50 rounded transition-all">
+        <span class="font-mono text-turquoise">05.</span> Blog
+      </a>
+      <a href="#contact" @click="section = 'contact'; menuOpen = false" class="py-2 px-4 hover:bg-dark-blue/50 rounded transition-all">
+        <span class="font-mono text-turquoise">06.</span> Contato
+      </a>
+      <a href="assets/govinda777.pdf" target="_blank" class="py-2 px-4 border border-turquoise text-turquoise rounded hover:bg-turquoise/10 transition-all text-center">
+        Currículo
+      </a>
+    </div>
+  </div>
+</nav> 

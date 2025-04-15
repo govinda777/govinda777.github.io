@@ -1,0 +1,72 @@
+/* Custom CSS File */
+
+/* Animações */
+.animate-fadeIn {
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animação do botão de música */
+#music-toggle:hover {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Prevenir scroll horizontal */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+
+/* Ajustes responsivos para elementos que podem causar overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+pre, code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Ajustes para grids e elementos flexíveis */
+.grid {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Corrigir possíveis problemas com margens negativas */
+[class*="gap-"] {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Ajustes para mobile */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  .grid {
+    margin-left: 0;
+    margin-right: 0;
+  }
+} 

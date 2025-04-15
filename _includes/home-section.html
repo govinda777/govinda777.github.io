@@ -1,0 +1,30 @@
+<!-- Hero Section with 3D Element -->
+<section id="home" class="min-h-screen flex items-center relative pt-20">
+  <div id="three-container" class="absolute inset-0 -z-5"></div>
+  <div class="container mx-auto px-4 py-20 z-10">
+    <div class="max-w-3xl" x-data="{ show: false }" x-init="setTimeout(() => show = true, 100)">
+      <p class="font-mono text-turquoise mb-4 transform transition-all duration-500"
+         :class="show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
+        Olá, meu nome é
+      </p>
+      <h1 class="text-5xl md:text-6xl font-bold mb-4 transform transition-all duration-500 delay-100"
+          :class="show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
+        Govinda.
+      </h1>
+      <h2 class="text-3xl md:text-4xl text-light-gray mb-6 transform transition-all duration-500 delay-200"
+          :class="show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
+        Transformo ideias em soluções inovadoras.
+      </h2>
+      <p class="text-light-gray mb-8 max-w-2xl transform transition-all duration-500 delay-300"
+         :class="show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
+        Sou um desenvolvedor full-stack especializado em construir (e ocasionalmente projetar) experiências digitais excepcionais. 
+        Atualmente, estou focado em criar produtos acessíveis e centrados no usuário.
+      </p>
+      <a href="#projects" 
+         class="inline-block px-6 py-3 border border-turquoise text-turquoise rounded hover:bg-turquoise/10 transition-all transform duration-500 delay-400"
+         :class="show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
+        Veja meus projetos
+      </a>
+    </div>
+  </div>
+</section> 
