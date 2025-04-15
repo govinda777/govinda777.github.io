@@ -1,5 +1,7 @@
 # Portfolio de Govinda
 
+![Site image](assets/site.jpeg)
+
 <div align="center">
   <img src="assets/govinda777.jpeg" alt="Govinda" width="200" height="200" style="border-radius: 50%; border: 3px solid #64FFDA;">
   
