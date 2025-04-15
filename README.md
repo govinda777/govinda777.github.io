@@ -1,6 +1,6 @@
 # Portfolio de Govinda
 
-![Site image](https://github.com/govinda777/govinda777.github.io/blob/main/assets/site.jpeg)
+![Site image](https://github.com/govinda777/govinda777.github.io/blob/main/assets/site.png)
 
 <div align="center">
   <img src="assets/govinda777.jpeg" alt="Govinda" width="200" height="200" style="border-radius: 50%; border: 3px solid #64FFDA;">
